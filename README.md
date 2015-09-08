@@ -3,7 +3,7 @@ Some scripts I made
 
 
 ##a5 
-Script to transform a4 pdf in booklet a5
+Script to transform a4 pdf in a5 booklet
 
 -pdfpages necessary
 
