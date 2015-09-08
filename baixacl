@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wget --random-wait -r -p -np -e robots=off -U mozilla -nH --cut-dirs=1 http://www.del.ufrj.br/~arthur/eel280/
+

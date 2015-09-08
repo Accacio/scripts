@@ -1,0 +1,24 @@
+#!/bin/bash
+clear
+
+dialog --msgbox "\nScript para transformar pdfs de a4 para a5" 7 46
+{ name=$(dialog --inputbox "diga o nome do arquivo :" 8 60 2>&1 1>&$OUTPUT); } {OUTPUT}>&1
+clear
+
+#handle dropped files
+if [[ $name == \'*\'" " ]]
+then
+ name=${name//\'/}
+fi
+
+dialog --msgbox "O nome do arquivo é $name" 6 45
+
+cd `dirname $name`
+
+pdfjam --nup 2x1 --suffix a5 --booklet true  --landscape  --outfile . $name
+name=${name##*/}
+name=${name/.pdf" "/}
+clear
+#notify 
+notify-send "${name}-a5.pdf criado"
+

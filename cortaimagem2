@@ -1,0 +1,14 @@
+#!/bin/bash
+
+while [[ $# -gt 0 ]]; do
+
+name=$1
+name_out=${name//.jpeg/}
+echo $name
+
+convert $1 -crop 1180x1788+0+0 "$name_out"_1.jpeg
+convert $1 -crop 1180x1788+1375+0 "$name_out"_2.jpeg
+convert $1 -crop 1788x1180+0+1930 "$name_out"_3.jpeg
+
+shift
+done
