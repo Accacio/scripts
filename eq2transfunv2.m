@@ -1,27 +1,33 @@
 
+syms a c d e f g h i j k l m n o p q r s t u v w x y z
+syms B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 equations=[];
-vars={};
-A={};
-k=0;
+vars =[];
+
+%%%%%%%%%%%%%% Catch Equations and variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+clc
  while true
- prompt = 'Write your vars, write ok to end\n';
- str = input(prompt,'s')
+ prompt = 'Write your equations, write ok to end\n\n';
+ str = input(prompt,'s');
  if strcmp('ok',str)
  break
  end
- k=k+1;
- A{k,1}=str
+ eq=sym(str);
+ equations=[equations eq];
  end
-% vars=sym('A%d',[k 1]);
-% 
-% for i = 1:k
-% vars(i,1)=sym(A(i,1));
-% end
-% vars.'
-% 
-% [A,b]=equationsToMatrix([x-w==y z==G*y w==H*z],vars.');
-%[A,b]=equationsToMatrix([x-w==y z==G*y w==H*z],vars.');
-%R=rref(A);
-%Sol=-R(:,end)
+
+ while true
+ prompt = 'Write your variables or write ok to end\n OBS.: Input must be the last one\n\n';
+ str = input(prompt,'s');
+ if strcmp('ok',str)
+ break
+ end
+ var=sym(str);
+ vars=[vars var];
+ end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+[A,b]=equationsToMatrix(equations,vars);
+R=rref(A);
+Sol=-R(:,end)
