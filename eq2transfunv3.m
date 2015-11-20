@@ -3,11 +3,13 @@
 %syms B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 equations=[];
 vars =[];
-
+testebloco=[];
 model= fileread('teste.mdl');
-System=strfind(model,'System {');
+modelpos=strfind(model,'System {');
 
-System=model(System:end);
+System=model(modelpos:end-1);
+System2=mat2str(System)
+Blocks=regex(System,'Block {','match')
 clear model;
 %[A,b]=equationsToMatrix(equations,vars);
 %R=rref(A);
