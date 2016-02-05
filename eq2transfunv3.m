@@ -9,7 +9,10 @@ modelpos=strfind(model,'System {');
 
 System=model(modelpos:end-1);
 System2=mat2str(System)
-Blocks=regex(System,'Block {','match')
+blocksinit=strfind(System,'{')
+blocksend=strfind(System,'}')
+blocks=strfind(System,'Block ')
+testebloco=System(blocks(1):blocksend(1))
 clear model;
 %[A,b]=equationsToMatrix(equations,vars);
 %R=rref(A);
