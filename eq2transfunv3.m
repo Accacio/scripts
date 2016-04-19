@@ -9,11 +9,17 @@ modelpos=strfind(model,'System {');
 
 System=model(modelpos:end-1);
 System2=mat2str(System)
-blocksinit=strfind(System,'{')
-blocksend=strfind(System,'}')
-blocks=strfind(System,'Block ')
-testebloco=System(blocks(1):blocksend(1))
+Line_init=strfind(System,'Line {')
+Line_end=strfind(System,'}')
+j=0
+for i=Line_init
+    j=j+1;
+    eval(['Block_' num2str(j) '=2'])
+end
+
+
 clear model;
+
 %[A,b]=equationsToMatrix(equations,vars);
 %R=rref(A);
 %Sol=-R(:,end)
