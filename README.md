@@ -13,7 +13,7 @@ Script to download site from EEL280 Logic Circuits in UFRJ
 -wget necessary
 
 ## cortaimagem (Linux)
-Script to cut image with 3 photos
+Script to cut image with 3 photos, increasing speed when scanning photos.
 
 -imagemagick necessary
 
