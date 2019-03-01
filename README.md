@@ -1,5 +1,5 @@
 # scripts
-Some scripts I made
+Some scripts I use/made
 
 
 ## a5 (Linux)
@@ -23,9 +23,9 @@ Same as cortaimagem, but for photos with different resolution
 -imagemagick necessary
 
 ## eq2transfun (MATLAB)
-Script to convert a symbolic signal equation to a symbolico Transfer Function
+Script to convert a symbolic signal equation to a symbolic Transfer Function
 
 -matlab necessary
 
 ## latexfigfolder (Windows)
-Script to include all figures in a folder in latex. Latex text is saved in a .txt with the name of the folder and in clipboard 
+Script to include all figures in a folder in LaTeX. LaTeX text is saved in a .txt with the name of the folder and in clipboard 
